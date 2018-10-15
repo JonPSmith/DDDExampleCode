@@ -12,10 +12,7 @@ namespace DataLayer.EfClasses.Standard
 
         public DateTime DateOrderedUtc { get; set; }
 
-        /// <summary>
-        /// In this simple example: the cookie holds a GUID for everyone that 
-        /// </summary>
-        public Guid CustomerName { get; set; }
+        public string CustomerName { get; set; }
 
         // relationships
 

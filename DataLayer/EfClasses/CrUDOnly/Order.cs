@@ -16,28 +16,23 @@ namespace DataLayer.EfClasses.CrUDOnly
         private Order() { }
 
         public int OrderId { get; private set; }
-        public DateTime DateOrderedUtc { get; private set; }
-        public DateTime ExpectedDeliveryDate { get; private set; }
-        public bool HasBeenDelivered { get; private set; }
+
+        public DateTime DateOrderedUtc { get; set; }
+
         public string CustomerName { get; private set; }
 
         // relationships
 
         public IEnumerable<LineItem> LineItems => _lineItems?.ToList();
 
-        public string OrderNumber => $"SO{OrderId:D6}";
-
-        public static IStatusGeneric<Order> CreateOrder(
-            string customerName, DateTime expectedDeliveryDate,
+        public static IStatusGeneric<Order> CreateOrder(string customerName,
             IEnumerable<OrderBooksDto> bookOrders)
         {
             var status = new StatusGenericHandler<Order>();
             var order = new Order
             {
                 CustomerName = customerName,
-                ExpectedDeliveryDate = expectedDeliveryDate,
-                DateOrderedUtc = DateTime.UtcNow,
-                HasBeenDelivered = expectedDeliveryDate < DateTime.Today
+                DateOrderedUtc = DateTime.UtcNow
             };
 
             byte lineNum = 1;
@@ -49,25 +44,5 @@ namespace DataLayer.EfClasses.CrUDOnly
             return status.SetResult(order); //don't worry, the Result will return default(T) if there are errors
         }
 
-        public IStatusGeneric ChangeDeliveryDate(string userId, DateTime newDeliveryDate)
-        {
-            var status = new StatusGenericHandler();
-            if (CustomerName != userId)
-            {
-                status.AddError("I'm sorry, but there was a system error.");
-                //Log a security issue
-                return status;
-            }
-
-            if (HasBeenDelivered)
-            {
-                status.AddError("I'm sorry, but that order has been delivered.");
-                return status;
-            }
-
-            //All Ok
-            ExpectedDeliveryDate = newDeliveryDate;
-            return status;
-        }
     }
 }

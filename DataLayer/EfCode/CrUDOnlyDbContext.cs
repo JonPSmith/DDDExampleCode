@@ -21,7 +21,6 @@ namespace DataLayer.EfCode
         {
             modelBuilder.ApplyConfiguration(new BookConfig());       
             modelBuilder.ApplyConfiguration(new BookAuthorConfig());
-            modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new LineItemConfig());   
         }
     }
