@@ -23,7 +23,7 @@ namespace RazorPageApp.Helpers
             using (var scope = webHost.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                using (var context = services.GetRequiredService<EfCoreContext>())
+                using (var context = services.GetRequiredService<CrUDOnlyDbContext>())
                 {
                     try
                     {

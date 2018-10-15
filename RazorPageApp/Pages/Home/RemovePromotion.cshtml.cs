@@ -1,4 +1,4 @@
-﻿using DataLayer.EfClasses;
+﻿using DataLayer.EfClasses.CrUDOnly;
 using GenericServices;
 using GenericServices.AspNetCore;
 using Microsoft.AspNetCore.Mvc;

@@ -1,12 +1,12 @@
 ﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT licence. See License.txt in the project root for license information.
+// Licensed under MIT license. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DataLayer.Dtos;
-using DataLayer.EfClasses;
+using DataLayer.EfClasses.CrUDOnly;
 using DataLayer.EfCode;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -34,17 +34,17 @@ namespace ServiceLayer.DatabaseCode.Services
             "ada@lovelace.co.uk"
         };
 
-        public static void DevelopmentEnsureDeleted(this EfCoreContext db)
+        public static void DevelopmentEnsureDeleted(this CrUDOnlyDbContext db)
         {
             db.Database.EnsureDeleted();
         }
 
-        public static void DevelopmentEnsureCreated(this EfCoreContext db)
+        public static void DevelopmentEnsureCreated(this CrUDOnlyDbContext db)
         {
             db.Database.EnsureCreated();
         }
 
-        public static int SeedDatabase(this EfCoreContext context, string dataDirectory)
+        public static int SeedDatabase(this CrUDOnlyDbContext context, string dataDirectory)
         {
             if (!(context.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
                 throw new InvalidOperationException("The database does not exist. If you are using Migrations then run PMC command update-database to create it");
@@ -70,14 +70,14 @@ namespace ServiceLayer.DatabaseCode.Services
         /// </summary>
         /// <param name="context"></param>
         /// <param name="books"></param>
-        public static void ResetOrders(this EfCoreContext context, List<Book> books = null)
+        public static void ResetOrders(this CrUDOnlyDbContext context, List<Book> books = null)
         {
             context.RemoveRange(context.Orders.ToList());        //remove the existing orders (the lineitems will go too)
             context.AddDummyOrders(books);              //add a dummy set of orders
             context.SaveChanges();
         }
 
-        private static void AddDummyOrders(this EfCoreContext context, List<Book> books = null)
+        private static void AddDummyOrders(this CrUDOnlyDbContext context, List<Book> books = null)
         {
             if (books == null)
                 books = context.Books.ToList();

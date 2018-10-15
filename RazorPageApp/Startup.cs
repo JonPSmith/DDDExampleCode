@@ -51,10 +51,10 @@ namespace RazorPageApp
             var connectionString = connectionStringBuilder.ToString();
             var connection = new SqliteConnection(connectionString);
             connection.Open();  //see https://github.com/aspnet/EntityFramework/issues/6968
-            services.AddDbContext<EfCoreContext>(options => options.UseSqlite(connection));
+            services.AddDbContext<CrUDOnlyDbContext>(options => options.UseSqlite(connection));
             //--------------------------------------------------------------------
 
-            services.GenericServicesSimpleSetup<EfCoreContext>(Assembly.GetAssembly(typeof(BookListDto)));
+            services.GenericServicesSimpleSetup<CrUDOnlyDbContext>(Assembly.GetAssembly(typeof(BookListDto)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

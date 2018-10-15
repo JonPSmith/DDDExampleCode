@@ -1,8 +1,8 @@
 ﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT licence. See License.txt in the project root for license information.
+// Licensed under MIT license. See License.txt in the project root for license information.
 
 using System.Linq;
-using DataLayer.EfClasses;
+using DataLayer.EfClasses.CrUDOnly;
 using DataLayer.EfCode;
 using GenericServices;
 using ServiceLayer.HomeController.Dtos;
@@ -11,9 +11,9 @@ namespace ServiceLayer.HomeController.Services
 {
     public class ChangePubDateService : StatusGenericHandler, IChangePubDateService
     {
-        private readonly EfCoreContext _context;
+        private readonly CrUDOnlyDbContext _context;
 
-        public ChangePubDateService(EfCoreContext context)
+        public ChangePubDateService(CrUDOnlyDbContext context)
         {
             _context = context;
         }

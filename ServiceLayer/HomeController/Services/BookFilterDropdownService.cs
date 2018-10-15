@@ -1,5 +1,5 @@
 ﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT licence. See License.txt in the project root for license information.
+// Licensed under MIT license. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,9 @@ namespace ServiceLayer.HomeController.Services
 {
     public class BookFilterDropdownService : IBookFilterDropdownService
     {
-        private readonly EfCoreContext _db;
+        private readonly CrUDOnlyDbContext _db;
 
-        public BookFilterDropdownService(EfCoreContext db)
+        public BookFilterDropdownService(CrUDOnlyDbContext db)
         {
             _db = db;
         }

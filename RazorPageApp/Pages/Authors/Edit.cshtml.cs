@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DataLayer.EfClasses;
+﻿using DataLayer.EfClasses.CrUDOnly;
 using GenericServices;
 using GenericServices.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ServiceLayer.HomeController.Dtos;
 
 namespace RazorPageApp.Pages.Authors
 {

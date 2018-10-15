@@ -20,7 +20,7 @@ namespace RazorPageApp.Pages.Home
     {
         private readonly IBookFilterDropdownService _filterService;
 
-        public FilterModel(EfCoreContext context)
+        public FilterModel(CrUDOnlyDbContext context)
         {
             _filterService = new BookFilterDropdownService(context);
         }

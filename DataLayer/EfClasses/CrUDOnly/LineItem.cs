@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT licence. See License.txt in the project root for license information.
+// Licensed under MIT license. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace DataLayer.EfClasses
+namespace DataLayer.EfClasses.CrUDOnly
 {
     public class LineItem : IValidatableObject 
     {

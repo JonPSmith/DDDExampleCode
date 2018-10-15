@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DataLayer.EfClasses;
+﻿using System.Linq;
+using DataLayer.EfClasses.CrUDOnly;
 using GenericServices;
 using GenericServices.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
