@@ -1,11 +1,11 @@
-﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
+﻿// Copyright (c) 2017 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
 // Licensed under MIT license. See License.txt in the project root for license information.
 
-using DataLayer.EfClasses.CrUDOnly;
+using DataLayer.EfClasses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataLayer.EfCode.Configurations.CrUDOnly
+namespace DataLayer.EfCode.Configurations.Standard
 {
     public class LineItemConfig : IEntityTypeConfiguration<LineItem>
     {
@@ -16,7 +16,6 @@ namespace DataLayer.EfCode.Configurations.CrUDOnly
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict); 
         }
-
         /**************************************************
         #A I add the OnDelete method onto the end of defining a relationship. I set it to restrict, which will stop the LineItem from being deleted, and hence EF Core will throw an exception if a Book entity class is deleted and a LineItem is linked to that specific book
          * *************************************************/

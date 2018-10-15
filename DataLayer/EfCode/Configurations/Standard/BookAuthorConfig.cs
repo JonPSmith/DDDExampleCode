@@ -1,13 +1,14 @@
-﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
+﻿// Copyright (c) 2017 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
 // Licensed under MIT license. See License.txt in the project root for license information.
 
-using DataLayer.EfClasses.CrUDOnly;
+using DataLayer.EfClasses;
+using DataLayer.EfClasses.Standard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataLayer.EfCode.Configurations.CrUDOnly
+namespace DataLayer.EfCode.Configurations.Standard
 {
-    internal class BookAuthorConfig : IEntityTypeConfiguration<BookAuthor>
+    public class BookAuthorConfig : IEntityTypeConfiguration<BookAuthor>
     {
         public void Configure
             (EntityTypeBuilder<BookAuthor> entity)
@@ -26,7 +27,6 @@ namespace DataLayer.EfCode.Configurations.CrUDOnly
                 .WithMany(t => t.BooksLink)       
                 .HasForeignKey(pt => pt.AuthorId);
         }
-
         /*Primary key settings**********************************************
         #A Here I use an anonymous object to define two (or more) properties to form a composite key. The order in which the properties appear in the anonymous object defines their order
         * ******************************************************/
