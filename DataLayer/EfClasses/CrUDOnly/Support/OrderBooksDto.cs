@@ -2,9 +2,8 @@
 // Licensed under MIT license. See License.txt in the project root for license information.
 
 using System;
-using DataLayer.EfClasses.CrUDOnly;
 
-namespace DataLayer.Dtos
+namespace DataLayer.EfClasses.CrUDOnly.Support
 {
     public struct OrderBooksDto
     {

@@ -10,7 +10,9 @@ namespace DataLayer.EfClasses.Standard
     {
         public int OrderId { get; set; }
 
-        public DateTime DateOrderedUtc { get; set; }
+        public DateTime OrderedUtc { get; set; }
+
+        public OrderStatuses Status { get; set; }
 
         public string CustomerName { get; set; }
 
@@ -20,7 +22,8 @@ namespace DataLayer.EfClasses.Standard
 
         public Order()
         {
-            DateOrderedUtc = DateTime.UtcNow;
+            OrderedUtc = DateTime.UtcNow;
+            Status = OrderStatuses.Created;
         }
     }
 }

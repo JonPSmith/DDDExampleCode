@@ -4,16 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataLayer.EfClasses.CrUDOnly.Support;
+using DataLayer.EfClasses.PocoOnly.Support;
 using GenericServices;
 
-namespace DataLayer.EfClasses.CrUDOnly
+namespace DataLayer.EfClasses.PocoOnly
 {
-    public class Order
+    public class Order : Entity
     {
         private HashSet<LineItem> _lineItems;
-
-        public int OrderId { get; private set; }
 
         public DateTime OrderedUtc { get; private set; }
 
@@ -42,7 +40,7 @@ namespace DataLayer.EfClasses.CrUDOnly
 
             byte lineNum = 1;
             order._lineItems = new HashSet<LineItem>(bookOrders
-                .Select(x => new LineItem(x.numBooks, x.ChosenBook, lineNum++)));
+                .Select(x => new LineItem(order, x.numBooks, x.ChosenBook, lineNum++)));
             if (!order._lineItems.Any())
                 status.AddError("No items in your basket.");
 

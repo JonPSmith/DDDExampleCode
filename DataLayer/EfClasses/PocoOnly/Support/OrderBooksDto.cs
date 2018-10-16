@@ -1,0 +1,21 @@
+﻿// Copyright (c) 2018 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
+// Licensed under MIT license. See License.txt in the project root for license information.
+
+using System;
+
+namespace DataLayer.EfClasses.PocoOnly.Support
+{
+    public struct OrderBooksDto
+    {
+        public int BookId { get; }
+        public Book ChosenBook { get; }
+        public short numBooks { get; }
+
+        public OrderBooksDto(int bookId, Book chosenBook, short numBooks) : this()
+        {
+            BookId = bookId;
+            ChosenBook = chosenBook ?? throw new ArgumentNullException(nameof(chosenBook));
+            this.numBooks = numBooks;
+        }
+    }
+}
