@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\PocoRepository\PocoRepository.csproj" />
     <ProjectReference Include="..\RazorPageApp\RazorPageApp.csproj" />
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj" />
   </ItemGroup>
