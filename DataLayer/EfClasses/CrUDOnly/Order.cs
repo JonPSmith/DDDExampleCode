@@ -49,7 +49,7 @@ namespace DataLayer.EfClasses.CrUDOnly
             return status.SetResult(order); //don't worry, the Result will return default(T) if there are errors
         }
 
-        public void MarkOrderAsDispatch()
+        public void MarkOrderAsDispatched()
         {
             Status = OrderStatuses.Dispatched;
         }

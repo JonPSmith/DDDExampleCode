@@ -29,7 +29,7 @@ namespace RazorPageApp.Controllers
             {
                 return NoContent();
             }
-            order.MarkOrderAsDispatch();
+            order.MarkOrderAsDispatched();
             _context.SaveChanges();
             return Ok();
         }

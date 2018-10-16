@@ -7,7 +7,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using DataLayer.EfClasses.PocoOnly.Support;
 using GenericServices;
-using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.EfClasses.PocoOnly
 {
