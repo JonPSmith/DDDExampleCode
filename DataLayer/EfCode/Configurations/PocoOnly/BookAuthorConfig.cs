@@ -13,13 +13,11 @@ namespace DataLayer.EfCode.Configurations.PocoOnly
             (EntityTypeBuilder<BookAuthor> entity)
         {
             entity.Property<int>("BookId")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .HasAnnotation("Key", 0);
+                .HasColumnType("int");
             entity.Property<int>("AuthorId")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .HasAnnotation("Key", 0);
+                .HasColumnType("int");
+
+            entity.HasKey("BookId", "AuthorId");
 
 
             //-----------------------------

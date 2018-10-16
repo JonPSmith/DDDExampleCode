@@ -14,7 +14,14 @@ namespace DataLayer.EfCode.Configurations.PocoOnly
         {
             entity.HasOne(p => p.ChosenBook)
                 .WithMany()
-                .OnDelete(DeleteBehavior.Restrict); 
+                .HasForeignKey("ChosenBookId")
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            entity.HasOne(p => p.LinkedOrder)
+                .WithMany()
+                .HasForeignKey("LinkedOrderId")
+                .IsRequired();
         }
     }
 }

@@ -27,7 +27,9 @@ namespace DataLayer.EfCode.Configurations.PocoOnly
             //relationships
 
             entity.HasMany(p => p.Reviews)  
-                .WithOne();
+                .WithOne()
+                .HasForeignKey("BookId")
+                .IsRequired();
 
             entity.Metadata
                 .FindNavigation(nameof(Book.Reviews))
