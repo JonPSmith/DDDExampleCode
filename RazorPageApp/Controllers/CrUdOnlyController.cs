@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using DataLayer;
 using DataLayer.EfClasses.CrUDOnly;
 using DataLayer.EfCode;
+using GenericServices;
+using GenericServices.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ServiceLayer.WebApiControllers.Dtos;
 
 namespace RazorPageApp.Controllers
 {
@@ -45,6 +48,14 @@ namespace RazorPageApp.Controllers
             book.AddReview(numStars, comment, voterName);
             _context.SaveChanges();
             return Ok();
+        }
+
+        [HttpPatch]
+        public ActionResult<WebApiMessageOnly> AddReview2(
+            AddReviewDto dto, [FromServices] ICrudServices service)
+        {
+            service.UpdateAndSave(dto);
+            return service.Response();
         }
     }
 }
