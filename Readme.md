@@ -30,9 +30,9 @@ to show how it would look.
 ### 3. CrUD-only EF Core classes
 
 These are classes with private setters specific constructors, but don't need a repository. You can find these in:
-- [Entity classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfClasses/Standard).
-- [EF Core configuration classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfCode/Configurations/Standard).
-- The [DbContext](https://github.com/JonPSmith/DDDExampleCode/blob/master/DataLayer/EfCode/StandardDbContext.cs) class.
+- [Entity classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfClasses/CrUDOnly).
+- [EF Core configuration classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfCode/Configurations/CrUDOnly).
+- The [DbContext](https://github.com/JonPSmith/DDDExampleCode/blob/master/DataLayer/EfCode/CrUDOnlyDbContext.cs) class.
 
 ### 4. CrUD and business logic
 
