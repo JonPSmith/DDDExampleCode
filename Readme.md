@@ -7,14 +7,14 @@ This contains some examples of Entity Framework Core (EF Core) classes, all mapp
 
 ## The three types of EF Core classes 
 
-### 1. Standard EF Core classes
+### 0. Standard EF Core classes
 
 These are classes with public getters and setters. You can find these in:
 - [Entity classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfClasses/Standard).
 - [EF Core configuration classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfCode/Configurations/Standard).
 - The [DbContext](https://github.com/JonPSmith/DDDExampleCode/blob/master/DataLayer/EfCode/StandardDbContext.cs) class.
 
-### 2. POCO-only EF Core classes
+### 1. POCO-only EF Core classes
 
 These are classes with private setters and specific constructors. Also see that the classes don't show the primary keys or foreign keys. 
 This requires more work at the configuration level to set up the relationships via shadow properties.  You can find these in:
@@ -27,14 +27,14 @@ NOTE: I didn't quite get the format of the Review table correct. It has an extra
 I have also created a very simple [Repository class](https://github.com/JonPSmith/DDDExampleCode/blob/master/PocoRepository/Repository.cs)
 to show how it would look.
 
-### 3. CrUD-only EF Core classes
+### 2. CrUD-only EF Core classes
 
 These are classes with private setters specific constructors, but don't need a repository. You can find these in:
 - [Entity classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfClasses/CrUDOnly).
 - [EF Core configuration classes](https://github.com/JonPSmith/DDDExampleCode/tree/master/DataLayer/EfCode/Configurations/CrUDOnly).
 - The [DbContext](https://github.com/JonPSmith/DDDExampleCode/blob/master/DataLayer/EfCode/CrUDOnlyDbContext.cs) class.
 
-### 4. CrUD and business logic
+### 3. CrUD and business logic
 
 I didn't create these versions of the EF Core classes. 
 
