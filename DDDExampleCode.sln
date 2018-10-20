@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{FF07D2F6-6F46-45DA-99E4-3683F2942F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{FF07D2F6-6F46-45DA-99E4-3683F2942F5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPageApp", "RazorPageApp\RazorPageApp.csproj", "{99477C92-E18E-4CD3-8C88-37774E2446DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPageApp", "RazorPageApp\RazorPageApp.csproj", "{99477C92-E18E-4CD3-8C88-37774E2446DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{95C9DBC5-54F9-47F7-BFFA-CBC8DFC747CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{95C9DBC5-54F9-47F7-BFFA-CBC8DFC747CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0389165C-3D0C-4F72-B9D1-640462F95C75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{0389165C-3D0C-4F72-B9D1-640462F95C75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocoRepository", "PocoRepository\PocoRepository.csproj", "{9C6B4DCA-8D0D-427C-A1C9-32571501B678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocoRepository", "PocoRepository\PocoRepository.csproj", "{9C6B4DCA-8D0D-427C-A1C9-32571501B678}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3891212A-B5ED-4D6F-8121-A52D906EB86B}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
