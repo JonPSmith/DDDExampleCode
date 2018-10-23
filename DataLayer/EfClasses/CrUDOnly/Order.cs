@@ -49,6 +49,26 @@ namespace DataLayer.EfClasses.CrUDOnly
             return status.SetResult(order); //don't worry, the Result will return default(T) if there are errors
         }
 
+        public static GenericBizRunner.IStatusGeneric<Order> CreateOrderViaBizLogic(string customerName,
+            IEnumerable<OrderBooksDto> bookOrders)
+        {
+            var status = new GenericBizRunner.StatusGenericHandler<Order>();
+            var order = new Order
+            {
+                CustomerName = customerName,
+                Status = OrderStatuses.Created,
+                OrderedUtc = DateTime.UtcNow
+            };
+            status.Result = order;
+
+            byte lineNum = 1;
+            order._lineItems = new HashSet<LineItem>(bookOrders
+                .Select(x => new LineItem(x.numBooks, x.ChosenBook, lineNum++)));
+            if (!order._lineItems.Any())
+                status.AddError("No items in your basket.");
+            return status;
+        }
+
         public void MarkOrderAsDispatched()
         {
             Status = OrderStatuses.Dispatched;

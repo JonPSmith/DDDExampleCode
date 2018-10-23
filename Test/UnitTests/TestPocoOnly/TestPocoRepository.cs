@@ -35,7 +35,7 @@ namespace Test.UnitTests.TestPocoOnly
             }
             using (var context = new PocoOnlyDbContext(options))
             {
-                var rep = new Repository(context);
+                var rep = new Repository(context, null);
 
                 //ATTEMPT
                 var ok = rep.AddReview(1, 2, "OK", "Me");

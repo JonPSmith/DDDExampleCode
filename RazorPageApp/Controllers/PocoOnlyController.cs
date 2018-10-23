@@ -19,7 +19,7 @@ namespace RazorPageApp.Controllers
 
         public PocoOnlyController(PocoOnlyDbContext context)
         {
-            _repository = new Repository( context);
+            _repository = new Repository( context, null);
         }
 
         [HttpPatch]
